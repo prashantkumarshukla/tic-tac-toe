@@ -2,7 +2,7 @@
   "expo": {
     "name": "tic-tac-toe-game",
     "slug": "tic-tac-toe-game",
-    "version": "1.0.0",
+    "version": "2.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -16,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.prashantshukla.tictactoegame"
     },
     "android": {
       "adaptiveIcon": {
@@ -34,6 +35,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0dcd56c2-010a-4675-8677-7bf654b11bb4"
+      }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-xxxxxxxx~xxxxxxxx",
+    "ios_app_id": "ca-app-pub-2714331057772144~4641155800"
   }
 }
