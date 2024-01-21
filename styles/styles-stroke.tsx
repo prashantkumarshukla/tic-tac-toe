@@ -8,7 +8,7 @@ export const Strikes = StyleSheet.create({
     strikeRow1: {
         width: '90%',
         height: 4,
-        top: '29%',
+        top: '33%',
         left: '5%'
     },
     strikeRow2: {

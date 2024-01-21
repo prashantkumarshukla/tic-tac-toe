@@ -20,7 +20,7 @@ import GameDraw from "../../components/game-draw/game-draw";
 import AppLogo from "../../components/logo/logo";
 import IconButton from '../../components/icon-button/icon-button';
 
-const adUnitId = 'ca-app-pub-2714331057772144';
+const adUnitId = __DEV__ ? TestIds.BANNER : 'ca-app-pub-2714331057772144/5393988363';
 
 const GamePage = () => {
     const { game } = useLocalSearchParams();
