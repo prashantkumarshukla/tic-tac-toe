@@ -4,6 +4,7 @@ import {
   BannerAd,
   BannerAdSize,
   TestIds,
+  useInterstitialAd,
 } from "react-native-google-mobile-ads";
 
 import { View, Text } from "../../components/Themed";
@@ -30,6 +31,9 @@ const adUnitId = __DEV__
 
 const GamePage = () => {
   const { game } = useLocalSearchParams();
+  const { isLoaded, isClosed, load, show } = useInterstitialAd(
+    TestIds.INTERSTITIAL
+  );
   const { x, o } = APP_CONSTANT;
   const {
     centerView,
@@ -147,6 +151,9 @@ const GamePage = () => {
   const winner = calculateWinner(squares);
 
   const resetOrNewGame = () => {
+    if (isLoaded) {
+      show();
+    }
     setPlayGameOverSound(true);
     setSquares(Array(9).fill(null));
     setStrikeClass("");
@@ -175,6 +182,11 @@ const GamePage = () => {
       setWhoseTurn(xIsNext ? "X" : "O");
     }
   }, [gameOver, xIsNext]);
+
+  useEffect(() => {
+    // Start loading the interstitial straight away
+    load();
+  }, [load]);
 
   return (
     <View style={centerView}>
